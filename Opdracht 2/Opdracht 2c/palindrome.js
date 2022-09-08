@@ -1,6 +1,6 @@
 /**
  * Class to check if a string is a palindrome
- *  * to test, write in console: const palindrome = new Palindrome('lepel');
+ * to test, write in console: const palindrome = new Palindrome('lepel');
  */
 class Palindrome {
     constructor(text) {
