@@ -32,3 +32,6 @@ class Palindrome {
         return this.text;
     }
 }
+
+const palindrome = new Palindrome('lepel');
+const palindrome2 = new Palindrome('bodypump');

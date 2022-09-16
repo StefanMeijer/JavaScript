@@ -20,3 +20,6 @@ class Member {
         return this.adres;
     }
 }
+
+const lid1 = new Member('stefan', 'erica');
+boekenwinkel.addMember(lid1);

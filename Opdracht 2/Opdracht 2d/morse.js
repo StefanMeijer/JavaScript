@@ -49,3 +49,5 @@ class Morse {
         return this.morsedText;
     }
 }
+
+const morse = new Morse('Hello World');

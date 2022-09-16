@@ -55,3 +55,5 @@ class Song {
         return this.couplet;
     }
 }
+
+const song = new Song('baby shark');

@@ -27,3 +27,6 @@ class Book {
         return this.pages;
     }
 }
+
+const boek1 = new Book('de weg', 'S. Meijer', 56);
+boekenwinkel.addBook(boek1);

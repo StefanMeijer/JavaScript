@@ -29,3 +29,5 @@ class Bookstore {
         return this.rent;
     }
 }
+
+const boekenwinkel = new Bookstore('EMMEN BIEB');

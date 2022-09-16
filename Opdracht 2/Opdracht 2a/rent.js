@@ -29,3 +29,6 @@ class Rent {
         return this.rentDate;
     }
 }
+
+const huur1 = new Rent(lid1, boek1, '14-09-2022', '18-09-2022');
+boekenwinkel.addRent(huur1);
