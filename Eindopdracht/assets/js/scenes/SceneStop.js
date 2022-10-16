@@ -4,6 +4,12 @@ class SceneStop extends Phaser.Scene {
     }
 
     create() {
-        this.add.text(20, 20, "Stopping game", { font: "25px Arial", fill: "yellow" });
+        this.add.text(0, 0, "Het spel is afgelopen, je wordt nu doorgestuurd naar het scorebord", { font: "25px Arial", fill: "yellow" });
+
+        //call function after 5 seconds
+        setTimeout(() => {
+            game.destroy(true);
+            location.href = 'scorebord.html';
+        }, 1000);
     }
 }

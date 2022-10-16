@@ -43,10 +43,27 @@
             <div class="col-md-12">
                 <h2>Vul hier je naam in en klik op de knop om te beginnen</h2>
                 <input class="input rounded" type="text" id="name" name="name" placeholder="Naam">
-                <a type="button" class="btn btn-primary buttonStart" href="pages/game.html">Start</a>
+                <a type="button" class="btn btn-primary buttonStart" href="#">Start</a>
             </div>
         </div>
     </div>
+
+    <script>
+        //Input registration
+        document.getElementById('name').addEventListener('input', function (e) {
+            if (document.getElementById('name').value != "") {
+                
+                localStorage.removeItem("player");
+                localStorage.removeItem("score");
+
+                localStorage.setItem('player', document.getElementById('name').value);
+
+                document.querySelector(".buttonStart").href = "pages/game.html";
+            } else {
+                document.querySelector(".buttonStart").href = "#";
+            }
+        });
+    </script>
 </body>
 
 </html>
