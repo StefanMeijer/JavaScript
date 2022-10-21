@@ -13,7 +13,7 @@ class InputReg {
                 localStorage.removeItem("player");
                 localStorage.removeItem("score");
 
-                localStorage.setItem('player', this.name.value);
+                localStorage.setItem('player', document.getElementById('name').value);
 
                 document.querySelector(".buttonStart").href = "pages/game.html";
             } else {
