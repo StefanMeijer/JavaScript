@@ -1,15 +1,29 @@
 class SceneStop extends Phaser.Scene {
+    /**
+     * Constructor
+     */
     constructor() {
         super("stopGame");
     }
 
+    /**
+     * Function to create objects
+     */
     create() {
-        this.add.text(0, 0, "Het spel is afgelopen, je wordt nu doorgestuurd naar het scorebord", { font: "25px Arial", fill: "yellow" });
+        //End game screen
+        this.add.text(20, 20, "Spel geëindigd", { font: "25px Arial", fill: "yellow" });
 
-        //call function after 5 seconds
-        setTimeout(() => {
+        //Score
+        this.add.text(20, 80, "Score: " + localStorage.getItem('score'), { font: "25px Arial", fill: "yellow" });
+
+        //Message that tells player to press space to go to scroebord
+        this.add.text(20, 140, "Druk op spatie om naar het scorebord te gaan", { font: "25px Arial", fill: "yellow" });
+        this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+        //if space is pressed, go to scoreboard
+        this.keySpace.on('down', () => {
             game.destroy(true);
             location.href = 'scorebord.html';
-        }, 1000);
+        });
     }
 }

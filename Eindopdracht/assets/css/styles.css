@@ -15,3 +15,8 @@ body {
     padding: 20px !important;
     /* !important is used to override the padding of the button */
 }
+
+.table {
+    max-width: 500px;
+    margin: 0 auto;
+}

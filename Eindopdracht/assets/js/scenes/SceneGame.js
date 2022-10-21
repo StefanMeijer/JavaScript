@@ -1,15 +1,15 @@
 class SceneGame extends Phaser.Scene {
-    
+
+    /**
+     * Constructor
+     */
     constructor() {
         super("playGame");
     }
 
-    //used to prepare data
-    init() {
-
-    }
-
-    //used to load music and images into memory
+    /**
+     * Function to load assets
+     */
     preload() {
         //Background
         this.load.image("background", "../assets/images/background.png");
@@ -33,20 +33,22 @@ class SceneGame extends Phaser.Scene {
             frameWidth: "100%",
             frameHeight: "100%"
         });
-        this.load.spritesheet("characterShooting", "../assets/images/characterShooting.gif",{
+        this.load.spritesheet("characterShooting", "../assets/images/characterShooting.gif", {
             frameWidth: "100%",
             frameHeight: "100%"
         });
-
     }
 
-    //used to add the objects to the game
+    /**
+     * Function to create objects
+     */
     create() {
         this.background = this.add.image(0, 0, "background");
         this.background.setOrigin(0, 0);
         this.background.setInteractive();
 
         //Add figures to game
+
         this.figure1 = this.physics.add.sprite(Phaser.Math.Between(0, config.width), 0, "figure1");
         this.figure2 = this.physics.add.sprite(Phaser.Math.Between(0, config.width), 0, "figure2");
         this.figure3 = this.physics.add.sprite(Phaser.Math.Between(0, config.width), 0, "figure3");
@@ -79,17 +81,18 @@ class SceneGame extends Phaser.Scene {
         //Score
         this.scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '25px Arial', fill: 'yellow' });
 
-        //Stop game after 60 seconds
+        //Stop game after gamesettings seconds
         setTimeout(() => {
             localStorage.setItem('score', gameSettings.score);
             this.scene.start("stopGame");
         }, gameSettings.gameLenghtinMiliseconds);
-        
+
     }
 
-    //loop that runs constantly
+    /**
+     * Function to update game
+     */
     update() {
-
         this.moveFigure(this.figure1, Phaser.Math.Between(1, gameSettings.enemySpeed));
         this.moveFigure(this.figure2, Phaser.Math.Between(1, gameSettings.enemySpeed));
         this.moveFigure(this.figure3, Phaser.Math.Between(1, gameSettings.enemySpeed));
@@ -146,8 +149,6 @@ class SceneGame extends Phaser.Scene {
      * @param {*} gameObject 
      */
     objectHandler(pointer, gameObject) {
-        // console.log(gameObject);
-
         if (gameObject.type == "Image") { //Check if object is an image(background)
             if (gameSettings.score > 0) {
                 gameSettings.score -= 5;

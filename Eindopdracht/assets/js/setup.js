@@ -1,5 +1,5 @@
 var config = {
-  width: 800,
+  width: 1000,
   height: 700,
   backgroundColor: 0x000000,
   scene: [SceneGame, SceneStop],
@@ -14,7 +14,7 @@ var config = {
 
 var gameSettings = {
   score: 0,
-  gameLenghtinMiliseconds: 20000,
+  gameLenghtinMiliseconds: 30000,
   playerSpeed: 1,
   enemySpeed: 14,
 }
